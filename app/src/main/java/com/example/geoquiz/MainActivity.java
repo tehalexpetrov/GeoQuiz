@@ -1,9 +1,11 @@
 package com.example.geoquiz;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,10 +17,12 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mTrueButton;
     private Button mFalseButton;
-    private Button mNextButton;
-    private Button mBackButton;
+    private ImageButton mNextButton;
+    private ImageButton mBackButton;
     private TextView mQuestionTextView;
     private int mCurrentIndex = 0;
+
+    public static  final String TAG = "MainActivity"; //Логирование
 
     private Questions[] mQuestionBank = new Questions[]{
             new Questions(R.string.question_Australia, true),
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate(Bundle) called"); //Логирование onCreate
         setContentView(R.layout.activity_main);
 
         //Поле вывода вопроса. А так же возможность выбрать другой вопрос
@@ -51,14 +56,14 @@ public class MainActivity extends AppCompatActivity {
             checkAnswer(false);
         });
 //Добавил кнопку вперед
-        mNextButton = (Button) findViewById(R.id.next_button);
+        mNextButton = (ImageButton) findViewById(R.id.next_button);
         mNextButton.setOnClickListener(v -> {
             mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
             updateQuestion();
         });
 
 //        Добавил кнопку назад и остановил цикл если вопросов нет
-        mBackButton = (Button) findViewById(R.id.back_button);
+        mBackButton = (ImageButton) findViewById(R.id.back_button);
         mBackButton.setOnClickListener(v -> {
             do{
                 if(mCurrentIndex != 0){
