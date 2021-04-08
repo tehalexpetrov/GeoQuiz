@@ -1,15 +1,12 @@
 <resources>
     <string name="app_name">GeoQuiz</string>
-    <string name="question_Australia">Как называли Австралию в 19 веке?</string>
-    <string name="true_button">Океания</string>
-    <string name="false_button">Боливия</string>
-    <string name="question_Egipt">Где протекает река Нил?</string>
-    <string name="true_egipt">Египет</string>
-    <string name="false_egipt">Бразилия</string>
-    <string name="question_Africa">Столица Южной Африки?</string>
-    <string name="true_africa">Кейптаун</string>
-    <string name="false_africa">Москва</string>
+    <string name="question_Australia">В 19 веке Австралию называли -" Океания "?</string>
+    <string name="question_Egipt">Река Нил протекает в Египте?</string>
+    <string name="question_Africa">Столица Южной Африки - Кейптаун?</string>
+    <string name="true_button">Да</string>
+    <string name="false_button">Нет</string>
     <string name="correct_answer">Верно</string>
     <string name="incorrect_answer">Неверно</string>
-    <string name="next_button">Следующий</string>
+    <string name="next_button">След</string>
+    <string name="back_button">Назад</string>
 </resources>
