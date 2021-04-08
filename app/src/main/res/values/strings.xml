@@ -7,5 +7,6 @@
     <string name="false_button">Нет</string>
     <string name="correct_answer">Верно</string>
     <string name="incorrect_answer">Неверно</string>
-    <string name="next_button">Следующий</string>
+    <string name="next_button">След</string>
+    <string name="back_button">Назад</string>
 </resources>
