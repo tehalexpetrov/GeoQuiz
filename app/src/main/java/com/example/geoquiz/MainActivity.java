@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button mTrueButton;
@@ -30,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
-        int question = mQuestionBank[mCurrentIndex].getTextResId();
-        mQuestionTextView.setText(question);
+        AtomicInteger question = new AtomicInteger(mQuestionBank[mCurrentIndex].getTextResId());
+        mQuestionTextView.setText(question.get());
 
         mTrueButton = (Button) findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(v -> {
@@ -46,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this, R.string.incorrect_answer, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.TOP, 0, 0);
             toast.show();
+        });
+
+        mNextButton = (Button) findViewById(R.id.next_button);
+        mNextButton.setOnClickListener(v -> {
+            mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+            question.set(mQuestionBank[mCurrentIndex].getTextResId());
+            mQuestionTextView.setText(question.get());
         });
     }
 }
