@@ -14,6 +14,14 @@ public class MainActivity extends AppCompatActivity {
     private Button mFalseButton;
     private Button mNextButton;
     private TextView mQuestionTextView;
+    private int mCurrentIndex = 0;
+
+    private Questions[] mQuestionBank = new Questions[]{
+            new Questions(R.string.question_Australia, true),
+            new Questions(R.string.question_Egipt, true),
+            new Questions(R.string.question_Africa, true),
+    };
+
 
 
     @Override
@@ -21,10 +29,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
+        int question = mQuestionBank[mCurrentIndex].getTextResId();
+        mQuestionTextView.setText(question);
+
         mTrueButton = (Button) findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(v -> {
             Toast toast = Toast.makeText(this, R.string.correct_answer, Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.TOP, 100, 200);
+            toast.setGravity(Gravity.TOP, 0, 0);
             toast.show();
         });
 

@@ -23,7 +23,5 @@ public class Questions {
     public Questions(int TextResId, boolean AnswerTrue){
         mTextResId = TextResId;
         mAnswerTrue = AnswerTrue;
-
-
     }
 }
