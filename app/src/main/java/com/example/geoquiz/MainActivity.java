@@ -32,6 +32,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate(Bundle) called"); //Логирование onCreate
@@ -44,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
             mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
             updateQuestion();
         });
+
+
+
 //Кнопка. Верный ответ
         mTrueButton = (Button) findViewById(R.id.true_button);
         mTrueButton.setOnClickListener(v -> {
