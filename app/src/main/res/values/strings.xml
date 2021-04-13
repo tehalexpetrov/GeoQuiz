@@ -3,6 +3,10 @@
     <string name="question_Australia">В 19 веке Австралию называли -" Океания "?</string>
     <string name="question_Egipt">Река Нил протекает в Египте?</string>
     <string name="question_Africa">Столица Южной Африки - Кейптаун?</string>
+    <string name="warning_text">Вы точно хотите этого</string>
+    <string name="show_answer_button">Показать ответ</string>
+    <string name="cheat_button">Cheat!</string>
+    <string name="judgmen_toast">Cheating is wrong!</string>
     <string name="true_button">Да</string>
     <string name="false_button">Нет</string>
     <string name="correct_answer">Верно</string>
