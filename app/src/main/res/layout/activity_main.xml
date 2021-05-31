@@ -21,8 +21,14 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/true_button"
+        android:id="@+id/cheat_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="@string/cheat_button"/>
 
+        <Button
+            android:id="@+id/true_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="13dp"
